@@ -1,0 +1,11 @@
+[tools]
+rust = { version = "1.96.1", components = "rustfmt,rust-src,clippy" }
+prek = "0.4.6"
+gitleaks = "8.30.1"
+
+[settings]
+lockfile = true
+
+[tasks]
+pre-commit = "prek run"
+detect-secrets = "gitleaks git --pre-commit --redact --staged --verbose"
